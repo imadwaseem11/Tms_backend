@@ -29,9 +29,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(morgan("dev"));
+
+// Root route to handle requests to "/"
+app.get("/", (req, res) => {
+  res.send("Welcome to the API");
+});
+
+// API routes
 app.use("/api", routes);
 
+// Middleware for handling 404 errors
 app.use(routeNotFound);
+
+// Error handling middleware
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
