@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import morgan from "morgan";
-import { errorHandler, routeNotFound } from "./middlewares/errorMiddlewares.js"; // Fixed Typo
+import { errorHandler, routeNotFound } from "./middlewares/errorMiddlewaves.js";
 import routes from "./routes/index.js";
 import { dbConnection } from "./utils/index.js";
 
@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://tms.startserv.online"], // Removed duplicate
+    origin: ["https://tms.startserv.online"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
